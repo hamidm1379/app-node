@@ -1,0 +1,149 @@
+<%- include('../layout/header-admin') -%>
+<div style="direction: rtl;text-align: right;" class="wrapper">
+    <div class="sidebar" data-color="purple" data-background-color="black"
+        data-image="/admin/assets/img/sidebar-2.jpg">
+        <div class="logo"><a href="/" class="simple-text logo-normal">
+                Creative Tim
+            </a></div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/admin">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./users">
+                        <i class="material-icons">content_paste</i>
+                        <p>لیست کاربران</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./products">
+                        <i class="material-icons">person</i>
+                        <p>مدیریت محصولات</p>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="./slider">
+                        <i class="material-icons">library_books</i>
+                        <p>مدیریت اسلایدر</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./icons.html">
+                        <i class="material-icons">bubble_chart</i>
+                        <p>Icons</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./map.html">
+                        <i class="material-icons">location_ons</i>
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="./notifications.html">
+                        <i class="material-icons">notifications</i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <div class="card">
+            <div class="card-header card-header-tabs card-header-danger">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#profile" data-toggle="tab">
+                                    <i class="material-icons">bug_report</i> مدیریت اسلایدر
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#messages" data-toggle="tab">
+                                    <i class="material-icons">code</i> درج اسلایدر
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                            <div style="text-align: left;direction: ltr;" class="card-body table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="text-warning">
+                                        <th>ID</th>
+                                        <th>نام</th>
+                                        <th>دسته بندی</th>
+                                        <th>قیمت</th>
+                                        <th>عکس</th>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>w</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                 w
+                                                </td>
+                                                <td>
+                                                    <button type="button" rel="tooltip" title="ویرایش"
+                                                        class="btn btn-white btn-link btn-sm">
+                                                        <form action="">
+                                                            <a class="material-icons">edit</a>
+                                                        </form>
+                                                    </button>
+
+                                                    <button type="button" rel="tooltip" title="حذف"
+                                                        class="btn btn-white btn-link btn-sm">
+                                                        <form action="">
+                                                            <a class="material-icons">close</a>
+                                                        </form>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="messages">
+                            <form action="/admin/slider" method="POST" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <input name="name" type="text" class="form-control" placeholder="نام">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <input name="title" type="text" class="form-control" placeholder="متن کوچک (اختیاری)">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <input name="url" type="url" class="form-control" placeholder="آدرس(مثال:https://google.com)">
+                                    </div>
+
+                                    <div style="margin-top: 20px;" class=" col-12">
+                                        <label for="">اضافه کردن عکس</label>
+                                        <br>
+                                        <input name="image-slider" type="file" id="customFile">
+                                    </div>
+                                    <button style="margin-top: 20px;" type="submit" class="btn btn-primary">اضافه کردن</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+<%- include('../layout/footer-admin'); -%>

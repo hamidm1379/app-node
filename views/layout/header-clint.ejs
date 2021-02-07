@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> </title>
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/clint/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/clint/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/clint/css/owl.carousel.css">
+    <link rel="stylesheet" href="/clint/style.css">
+    <link rel="stylesheet" href="/clint/css/responsive.css">
+</head>
+
+<body>
+
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <% if(!login){ %>
+                            <li><a href="/login"><i class="fas fa-sign-in-alt"></i> ورود</a></li>
+                            <li><a href="/signup"><i class="fas fa-user-plus"></i> عضویت</a></li>
+                            <% } else { %>
+                            <li><a href="/myprofile"><i class="fa fa-user"></i>پروفایل من</a></li>
+                            <li><a href="/logout"><i class="fas fa-user-plus"></i> خروج</a></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <!--    <div class="col-md-4">
+
+                </div> -->
+            </div>
+        </div>
+    </div>
+    </div> <!-- End header area -->
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="./"><img src="/clint/img/logo.png"></a></h1>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="cart.html">سبد خرید <i class="fa fa-shopping-cart"></i>
+                            <span class="product-count">5</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

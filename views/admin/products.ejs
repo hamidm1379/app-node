@@ -1,0 +1,188 @@
+<%- include('../layout/header-admin') -%>
+    <div style="direction: rtl;text-align: right;" class="wrapper">
+        <div class="sidebar" data-color="purple" data-background-color="black"
+            data-image="/admin/assets/img/sidebar-2.jpg">
+            <div class="logo"><a href="/" class="simple-text logo-normal">
+                    Creative Tim
+                </a></div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/admin">
+                            <i class="material-icons">dashboard</i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./users">
+                            <i class="material-icons">content_paste</i>
+                            <p>لیست کاربران</p>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./products">
+                            <i class="material-icons">person</i>
+                            <p>مدیریت محصولات</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./slider">
+                            <i class="material-icons">library_books</i>
+                            <p>مدیریت اسلایدر</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./icons.html">
+                            <i class="material-icons">bubble_chart</i>
+                            <p>Icons</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./map.html">
+                            <i class="material-icons">location_ons</i>
+                            <p>Maps</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./notifications.html">
+                            <i class="material-icons">notifications</i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item active-pro ">
+              <a class="nav-link" href="./upgrade.html">
+                  <i class="material-icons">unarchive</i>
+                  <p>Upgrade to PRO</p>
+              </a>
+          </li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="card">
+                <div class="card-header card-header-tabs card-header-warning">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#profile" data-toggle="tab">
+                                        <i class="material-icons">bug_report</i> محصولات
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#messages" data-toggle="tab">
+                                        <i class="material-icons">code</i> درج محصول
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#settings" data-toggle="tab">
+                                        <i class="material-icons">code</i> درج دسته بندی
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="profile">
+                                <div style="text-align: left;direction: ltr;" class="card-body table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                            <th>ID</th>
+                                            <th>نام</th>
+                                            <th>دسته بندی</th>
+                                            <th>قیمت</th>
+                                            <th>عکس</th>
+                                        </thead>
+                                        <tbody>
+                                            <% product.forEach(pro=> { %>
+                                                <tr>
+                                                    <td><%= pro.id  %></td>
+                                                    <td><%= pro.name  %></td>
+                                                    <td><%= pro.category  %></td>
+                                                    <td><%= pro.price  %></td>
+                                                    <td>
+                                                        <img width="100px" height="60px" src="<%= pro.img  %>" alt="">
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" rel="tooltip" title="ویرایش"
+                                                            class="btn btn-white btn-link btn-sm">
+                                                            <form action="">
+                                                                <a class="material-icons">edit</a>
+                                                            </form>
+                                                        </button>
+
+                                                        <button type="button" rel="tooltip" title="حذف"
+                                                            class="btn btn-white btn-link btn-sm">
+                                                            <form action="">
+                                                                <a class="material-icons">close</a>
+                                                            </form>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <% }); %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="messages">
+                                <form action="/admin/productsadd" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <input name="name" type="text" class="form-control" placeholder="نام">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <input name="price" type="number" class="form-control"
+                                                id="exampleInputPassword1" placeholder="قیمت">
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <select name="category" class="form-control" id="exampleFormControlSelect1">
+                                                <option value="" hidden selected>دسته بندی انخاب کنید</option>
+                                                <% cate.forEach(function(cat){ %>
+                                                    <option value="<%= cat.cate %>">
+                                                        <%= cat.cate %>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                        <div class=" col-6">
+                                            <label for="">اضافه کردن عکس</label>
+                                            <br>
+                                            <input name="img" type="file" id="customFile">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="exampleFormControlTextarea1">توضیحات محصول</label>
+                                            <textarea name="des" style="width: 500px;" name="des" id="editor1"
+                                                class="form-control" id="exampleFormControlTextarea1"></textarea>
+                                        </div>
+                                        <br><br>
+                                        <button type="submit" class="btn btn-primary">اضافه کردن</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="settings">
+                                <form action="/admin/products" method="POST">
+                                    <div class="row">
+                                        <div class="form-group col-12">
+                                            <input name="cate" type="text" class="form-control" id="exampleInputEmail1"
+                                                placeholder="نام دسته بندی">
+                                        </div>
+                                        <br>
+                                        <button type="submit" class="btn btn-primary">اضافه کردن</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../layout/footer-admin'); -%>

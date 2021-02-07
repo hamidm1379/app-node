@@ -1,0 +1,27 @@
+<%- include('../layout/header-clint') -%>
+<div dir="rtl" class="container">
+    <br><br>
+    <h1>ثبت نام</h1>
+    <% if(error.length){ %>
+    <div style="text-align: right;direction: rtl;" class="alert alert-danger">
+        <ul>
+            <% error.forEach(function (err) {%>
+            <li><%= err %></li>
+            <% }) %>
+        </ul>
+    </div>
+    <% } %>
+    <form action="./signup" method="POST">
+        <input style="width: 350px; border-radius: 2px;" name="name" type="text" placeholder="name">
+        <br><br>
+        <input style="width: 350px;border-radius: 2px;" name="email" type="email" placeholder="email">
+        <br><br>
+        <input style="width: 350px;border-radius: 2px;" name="password" type="password" placeholder="password">
+        <br><br>
+        <%- recaptcha %> 
+        <br><br>
+        <button type="submit">عضویت</button>
+    </form>
+    <br>
+</div>
+<%- include('../layout/footer-clint') -%>

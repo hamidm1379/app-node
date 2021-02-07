@@ -1,0 +1,13 @@
+@font-face {
+	font-family: 'IranSans';
+	src: url('/clint/iran_sans_serif/IRANSansWeb(FaNum).woff') format("woff");
+}
+
+body { 
+	font-family:"IranSans";
+	overflow-x: hidden !important;
+ }
+
+option{
+	color: gray;
+}

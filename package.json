@@ -1,0 +1,36 @@
+{
+  "name": "siteshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "hamid",
+  "license": "ISC",
+  "dependencies": {
+    "alert": "^5.0.8",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-recaptcha": "^5.0.2",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.7.0",
+    "method-override": "^3.0.0",
+    "mkdirp": "^1.0.4",
+    "moment-jalaali": "^0.9.2",
+    "mongoose": "^5.11.4",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sweetalert2": "^10.12.5"
+  }
+}
